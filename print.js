@@ -22,7 +22,7 @@ function displayIn(arr,elem,num){
   }
   var tempArr=strToArr(arr[num]),
       i=0,
-      len=tempArr.length,
+      len=tempArr.length;
   loop=setInterval(function(){
     elem.innerHTML+=tempArr[i++];
     if(i>=len){
@@ -35,6 +35,36 @@ function displayIn(arr,elem,num){
   },300);
 }
 
-var arr=["hello world!","thanks for your review","要输出的字符以数组形式存储","一个元素占据一行依次输出"];
+var arr=["hello world!","thanks for your review","要输出的字符以数组形式存储","一个元素占据一行依次输出"]
+	loop=0;
 
 displayIn(arr,$("print"));
+
+$("print").onclick=function(){
+	clearInterval(loop);
+	this.innerHTML="";
+	for(var i=0,len=arr.length;i<len;i++){
+		this.innerHTML+=arr[i];
+		this.innerHTML+="<br />";
+	}
+	this.onclick=null;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
